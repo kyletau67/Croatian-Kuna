@@ -1,10 +1,10 @@
-<Team Name (without word "team")>
-<Member Bubbles>
-<Member Buttercup>
-<Member Blossom>
-pd <pd#>
+Croatian Kuna
+Henry Carver
+Ricky Lin
+Kyle Tau
+pd 2
 ---------------------
-<Project>
+Texas Hold Em
 
 
 
