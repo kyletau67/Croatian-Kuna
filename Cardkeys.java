@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public class Cardkeys {
+public interface Cardkeys {
     public static String stringifyS(int c) {
 	String str = "";
 	double suit = c / 13.0;
