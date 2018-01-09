@@ -12,6 +12,7 @@ The game will end when the player runs out of money. The player can keep on play
 out of money. The program will keep track of how much money the player has. We also plan on a 
 multiplayer feature involving screen clearing mechanisms to clear the screen and setting a timer
 for each user. 
+
 	In order to run our program, run the Woo.java file. Then the game begins. Starting off,
 you will have two cards in your hand and 3 cards on the table. After looking at what type of hand
 you will be able to make, you would have to type into the terminal your next move: Check or Bet.
