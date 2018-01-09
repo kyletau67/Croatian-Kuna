@@ -1,6 +1,7 @@
 # Croatian-Kuna
 Final Project by Henry Carver, Ricky Lin, and Kyle Tau (Period 2)
-	For our final project, we will create a simulation of the game Texas Hold 'Em. The 
+	
+For our final project, we will create a simulation of the game Texas Hold 'Em. The 
 player will play against an AI controlled dealer. The simulation will proceed like a normal game 
 of Texas Hold 'Em. The player will be able to see their own two cards and the cards being dealt on
 the table. Both the player and the AI's hand will be sorted and the code will look for the highest
