@@ -45,5 +45,8 @@ public interface Cardkeys {
 
 	for (Object key: cards.keySet())
 	    System.out.println(key + " - " + cards.get(key));
-    }   
+    }
+
+    public abstract String get(int k);
+    
 }
