@@ -1,0 +1,16 @@
+Croatian-Kuna
+Final Project by Henry Carver, Ricky Lin, and Kyle Tau
+Period 2
+
+To Do List:
+1. Map each card of the deck to a certain suit and value 
+2. Create the Card class that assigns each object of the class a suit and value
+3. Create the Abstract class Player with instance variables name, hand, and balance
+4. Implement hand sorting algorithms 
+5. Implement methods to check for certain hands
+5. Implement methods for betting
+6. Implement conditions for winning and losing 
+7. Implement AI version for the previous methods
+8. Write the code to run through the first round of the game with player interaction
+9. Extend the code to infinite number of rounds until the player runs out of money
+10. Possible multiplayer mode?
