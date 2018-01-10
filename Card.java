@@ -17,9 +17,8 @@ public class Card {
 	    val = Integer.parseInt(str.substring(0,1));
 	}
     }
-    public String get(int key) {
-	
-    }
+
     public static void main(String[] args) {
+       
     }
 }
