@@ -1,7 +1,16 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public interface Cardkeys {
+public class Cardkeys {
+    public Cardkeys() {
+	Map cards = new HashMap();
+
+	for (int count = 1; count < 53; count++) {
+	    cards.put(count, stringify(count));
+	}
+
+	for (Object key: cards.keySet())
+	    System.out.println(key + " - " + cards.get(key)); }
     public static String stringifyS(int c) {
 	String str = "";
 	double suit = c / 13.0;
@@ -36,17 +45,18 @@ public interface Cardkeys {
     public static String stringify(int c) {
 	return stringifyV(c) + " of " + stringifyS(c);
     }
+
     public static void main(String[] args) {
-	Map cards = new HashMap();
+	/*Map cards = new HashMap();
 
-	for (int count = 1; count < 53; count++) {
-	    cards.put(count, stringify(count));
-	}
+	  for (int count = 1; count < 53; count++) {
+	  cards.put(count, stringify(count));
+	  }
 
-	for (Object key: cards.keySet())
-	    System.out.println(key + " - " + cards.get(key));
+	  for (Object key: cards.keySet())
+	  System.out.println(key + " - " + cards.get(key));*/
     }
 
-    public abstract String get(int k);
+    //public abstract String get(int k);
     
 }
