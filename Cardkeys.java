@@ -2,15 +2,15 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Cardkeys {
-    public Cardkeys() {
-	Map cards = new HashMap();
-
+    //public Cardkeys() {
+    static Map ck = new HashMap();
+    public static Map cards = ck;
+    /*public Cardkeys {
 	for (int count = 1; count < 53; count++) {
 	    cards.put(count, stringify(count));
 	}
-
-	for (Object key: cards.keySet())
-	    System.out.println(key + " - " + cards.get(key)); }
+	}*/
+    // }
     public static String stringifyS(int c) {
 	String str = "";
 	double suit = c / 13.0;
@@ -46,17 +46,15 @@ public class Cardkeys {
 	return stringifyV(c) + " of " + stringifyS(c);
     }
 
+    public static String get(int k) {
+	return "h";
+    }
+    
     public static void main(String[] args) {
-	/*Map cards = new HashMap();
-
-	  for (int count = 1; count < 53; count++) {
-	  cards.put(count, stringify(count));
-	  }
-
 	  for (Object key: cards.keySet())
-	  System.out.println(key + " - " + cards.get(key));*/
+	  System.out.println(key + " - " + cards.get(key));
     }
 
-    //public abstract String get(int k);
+
     
 }
