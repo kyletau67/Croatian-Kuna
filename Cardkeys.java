@@ -5,12 +5,7 @@ public class Cardkeys {
     //public Cardkeys() {
     static Map ck = new HashMap();
     public static Map cards = ck;
-    public Cardkeys {
-	for (int count = 1; count < 53; count++) {
-	    cards.put(count, stringify(count));
-	}
-    } //make a method that makes the list, call the method when instantiating cardkeys
-    // }
+    
     public static String stringifyS(int c) {
 	String str = "";
 	double suit = c / 13.0;
@@ -46,11 +41,18 @@ public class Cardkeys {
 	return stringifyV(c) + " of " + stringifyS(c);
     }
 
+    public static void makeDeck() {
+	for (int count = 1; count < 53; count++) {
+	    cards.put(count, stringify(count));
+	}
+    }
+    
     public static Object get(int k) {
 	return cards.get(k);
     }
     
     public static void main(String[] args) {
+	makeDeck();
 	for (Object key: cards.keySet())
 	    System.out.println(key + " - " + cards.get(key));
     }
