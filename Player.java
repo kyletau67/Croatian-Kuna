@@ -5,6 +5,8 @@ public class Player {
     public double balance;
     private ArrayList<Comparable> hand;
     public Player() {
-	//balance = 10000;
+	balance = 10000;
 	//
+    }
+    public Player( 
     
