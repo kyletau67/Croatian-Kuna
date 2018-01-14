@@ -8,7 +8,8 @@ public class Card {
     
     public Card(int key) {
 	Cardkeys k = new Cardkeys();
-	String str = k.get(key);
+	k.makeDeck();
+	String str = (String)k.get(key);
 	suit = str.substring(str.length()-1);
 	if (key % 13 == 9) {
 	    val = 10;
@@ -19,6 +20,8 @@ public class Card {
     }
 
     public static void main(String[] args) {
-       
+	Card TwoOfD = new Card(1);
+	System.out.println(TwoOfD.suit);
+	System.out.println(TwoOfD.val);
     }
 }
