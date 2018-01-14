@@ -6,6 +6,8 @@ public class Player {
     public String name;
     public double balance;
     private ArrayList<Comparable> hand;
+    public ArrayList<Comparable> all;
+    public ArrayList<Comparable> table;
     Scanner sc = new Scanner(System.in);
     
     public Player() {
