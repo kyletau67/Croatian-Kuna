@@ -2,6 +2,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 
+/* Deck.java contains an ArrayList that holds all the 52 cards. It also has a deck resetting method that will clear the arraylist and add in a fresh set of 52 cards*/
 public class Deck {
     public ArrayList<Comparable> deck;
     public Card c1 = new Card(1);
