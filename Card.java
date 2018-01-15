@@ -21,7 +21,7 @@ public class Card {
 
     public static void main(String[] args) {
 	Card TwoOfD = new Card(1);
-	System.out.println(TwoOfD.suit);
-	System.out.println(TwoOfD.val);
+	//System.out.println(TwoOfD.suit);
+	//System.out.println(TwoOfD.val);
     }
 }
