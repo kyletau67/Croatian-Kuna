@@ -15,8 +15,40 @@ public class Woo {
        	p1.addHand(deal); 
     } //passes out cards from deck.java to table and hand of player
     public static void displayTable() {
+	for (Object y: table) {
+	    Card t = (Card)(y);
+	    if (t.suit == "D") {
+		System.out.print("\u2666" + t.val + " ");
+	    }
+	    else if (t.suit == "C") {
+		System.out.print("\u2663" + t.val + " ");
+	    }
+	    else if (t.suit == "H") {
+		System.out.print("\u2764" + t.val + " ");
+	    }
+	    else {
+		System.out.print("\u2660" + t.val + " ");
+	    }
+	}
+	System.out.println();
     } //prints the table
     public static void displayHand() {
+	for (Object x: p1.getHand()) {
+	    Card h = (Card)(x);
+	    if (h.suit == "D") {
+		System.out.print("\u2666" + h.val + " ");
+	    }
+	    else if (h.suit == "C") {
+		System.out.print("\u2663" + h.val + " ");
+	    }
+	    else if (h.suit == "H") {
+		System.out.print("\u2764" + h.val + " ");
+	    }
+	    else {
+		System.out.print("\u2660" + h.val + " ");
+	    }
+	}
+	System.out.println();
     } //prints the hand
     public static void bet() {
 	bet = sc1.next();
@@ -57,33 +89,33 @@ public class Woo {
 
 
     public boolean straight() {
-	 if( for (int x = 0; x < all.size(); x++) {
-		 (((Card)all.get(all.size()-x)).value - ((Card)all.get(all.size()-(x+1))).value == 1);
-	     }
-	     ) {
-	     return true;
-	 }
+	if( for (int x = 0; x < all.size(); x++) {
+		(((Card)all.get(all.size()-x)).value - ((Card)all.get(all.size()-(x+1))).value == 1);
+	    }
+	    ) {
+	    return true;
+	}
     }
     public boolean fourOfAKind() {
-	 if( for (int x = 0; x < all.size()-3; x++) {
-		 if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value) == ((Card)all.get(x+3).value)) {
-		     break;
-		 }
-	     }
-	     ) {
-	     return true;
-	 }
+	if( for (int x = 0; x < all.size()-3; x++) {
+		if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value) == ((Card)all.get(x+3).value)) {
+		    break;
+		}
+	    }
+	    ) {
+	    return true;
+	}
     }
 
     public boolean threeOfAKind() {
-	 if ( for (int x =0; x < all.size()-2; x++) {
-		 if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value)) {
-		     break;
-		 }
-	     }
-	     ) {
-	     return true;
-	 }
+	if ( for (int x =0; x < all.size()-2; x++) {
+		if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value)) {
+		    break;
+		}
+	    }
+	    ) {
+	    return true;
+	}
     }
 
     
@@ -103,21 +135,21 @@ public class Woo {
 	    }
 	}
 	//distinguish type of hand
-	}
     }
+}
     
-    public static void main(String[] args) {
-	int table1 = (int) (Math.random() * (Deck.deck.size() + 1));
-	table.add(Deck.deck.get(table1));
-	comHand.add(Deck.deck.get(table1));
-	Deck.deck.remove(table1);
-	int table2 = (int) (Math.random() * (Deck.deck.size() + 1));
-	table.add(Deck.deck.get(table2));
-	comHand.add(Deck.deck.get(table2));
-	Deck.deck.remove(table2);
-	System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
-	while (p1.balance > 0) {
-	    playTurn();
-	}
+public static void main(String[] args) {
+    int table1 = (int) (Math.random() * (Deck.deck.size() + 1));
+    table.add(Deck.deck.get(table1));
+    comHand.add(Deck.deck.get(table1));
+    Deck.deck.remove(table1);
+    int table2 = (int) (Math.random() * (Deck.deck.size() + 1));
+    table.add(Deck.deck.get(table2));
+    comHand.add(Deck.deck.get(table2));
+    Deck.deck.remove(table2);
+    System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
+    while (p1.balance > 0) {
+	playTurn();
     }
+}
 }
