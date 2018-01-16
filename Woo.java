@@ -8,6 +8,7 @@ public class Woo {
     static Player p1 = new Player();
     static Scanner sc1 = new Scanner(System.in);
     public static ArrayList<Comparable> comHand;
+    public static String handType;
     
     public static void deal() {
       	int deal = (int) (Math.random() * (Deck.getDeck().size() + 1));
@@ -56,7 +57,6 @@ public class Woo {
 
     public static void findHandType(ArrayList<Comparable> all) {
 	all = comHand;
-	String handType = "";
 	//sort first
 	for( int partition = 1; partition < all.size(); partition++ ) {
 	    System.out.println( all ); 
