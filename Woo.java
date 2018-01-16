@@ -2,11 +2,11 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Woo {
-    public ArrayList<Comparable> table;
-    public double bet;
-    public double pot;
+    public static ArrayList<Comparable> table;
+    public static double bet;
+    public static double pot;
     static Player p1 = new Player();
-    Scanner sc1 = new Scanner(System.in);
+    static Scanner sc1 = new Scanner(System.in);
     public static ArrayList<Comparable> comHand;
     
     public static void deal() {
@@ -24,8 +24,8 @@ public class Woo {
         pot += 100.0;    //set player bet to comp's bet
     }
     public static void raise() {
-	bet = sc1.next();  //set the bet to user input
-	pot = bet + comp.bet;  //comp.bet is computer's bet, subject to change
+	bet = Integer.parseInt(sc1.next());  //set the bet to user input
+	pot += bet;  
     }
     public static void comCall() {
 	pot += bet; //add another amt of bet to the pot 
@@ -34,35 +34,35 @@ public class Woo {
 	pot += 100.0;
     }
     public static void fold() {
-	lose();
+	//lose();
     }
-    public static void comTurn() {
-	if 
-    }
+    // public static void comTurn() {
+    //	if 
+    //}
     public static void playTurn() {
         deal();
 	displayTable();
 	displayHand();
 	System.out.println("(1) Call\n(2) Raise\n(3) Fold");
-	if (sc1.next() == 1) {
+	if (sc1.next() == "1") {
 	    call(); }
-	else if (sc1.next() == 2) {
+	else if (sc1.next() == "2") {
 	    System.out.println("How much would you like to raise?");
 	    raise(); }
-	else {
+	else if (sc1.next() == "3") {
 	    fold(); }
-	comTurn();
+	//comTurn();
     }
 
     
     public static void main(String[] args) {
 	int table1 = (int) (Math.random() * (Deck.deck.size() + 1));
 	table.add(Deck.deck.get(table1));
-	comhand.add(Deck.deck.get(table2));
+	comHand.add(Deck.deck.get(table1));
 	Deck.deck.remove(table1);
 	int table2 = (int) (Math.random() * (Deck.deck.size() + 1));
 	table.add(Deck.deck.get(table2));
-	comhand.add(Deck.deck.get(table2));
+	comHand.add(Deck.deck.get(table2));
 	Deck.deck.remove(table2);
 	System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
 	while (p1.balance > 0) {
