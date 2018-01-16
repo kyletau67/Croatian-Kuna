@@ -1,5 +1,5 @@
 # Croatian-Kuna
-Final Project by Henry Carver, Ricky Lin, and Kyle Tau (Period 2)
+## Final Project by Henry Carver, Ricky Lin, and Kyle Tau (Period 2)
 	
 For our final project, we will create a simulation of the game Texas Hold 'Em. The 
 player will play against an AI controlled dealer. The simulation will proceed like a normal game 
@@ -13,14 +13,20 @@ out of money. The program will keep track of how much money the player has. We a
 multiplayer feature involving screen clearing mechanisms to clear the screen and setting a timer
 for each user. 
 
-	In order to run our program, run the Woo.java file. Then the game begins. Starting off,
+In the game, 
 you will have two cards in your hand and 3 cards on the table. After looking at what type of hand
-you will be able to make, you would have to type into the terminal your next move: Check or Bet.
+you will be able to make, you would have to type into the terminal your next move: Check, Raise, or Fold.
 If you bet, you will then have to input the amount of money you want to bet which cannot be larger
 than what you have in your balance. After the initial round, another card will be added to the
 table and you would have 3 options now: Raise, Fold, Call. Folding means you concede and the round
 will end and a new round will start. Call simply raise your bet to match the AI's bet. If you 
 raise, you would have to type in how much you want to raise the bet to which cannot be lower than
-the money that's already placed forth. This continues until the river is complete and both players
-reveal their hand, determining who wins and loses. After that, another round begins and the cycle
-repeats until you lose all your money.   
+the money that's already placed forth. Folding causes you to lose any money you have put into the pot,
+and a new river is dealt out. When the river is complete, both players reveal their hand, determining who 
+wins and who loses. After that, another round begins and the cycle repeats until you lose all your money.   
+
+# INSTRUCTIONS:
+After importing our files,
+1. In terminal, type ```javac Woo.java```
+2. Type in your name!
+3. Start Playing! 
