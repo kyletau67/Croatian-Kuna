@@ -55,6 +55,39 @@ public class Woo {
 	//comTurn();
     }
 
+
+    public boolean straight() {
+	 if( for (int x = 0; x < all.size(); x++) {
+		 (((Card)all.get(all.size()-x)).value - ((Card)all.get(all.size()-(x+1))).value == 1);
+	     }
+	     ) {
+	     return true;
+	 }
+    }
+    public boolean fourOfAKind() {
+	 if( for (int x = 0; x < all.size()-3; x++) {
+		 if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value) == ((Card)all.get(x+3).value)) {
+		     break;
+		 }
+	     }
+	     ) {
+	     return true;
+	 }
+    }
+
+    public boolean threeOfAKind() {
+	 if ( for (int x =0; x < all.size()-2; x++) {
+		 if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value)) {
+		     break;
+		 }
+	     }
+	     ) {
+	     return true;
+	 }
+    }
+
+    
+
     public static void findHandType(ArrayList<Comparable> all) {
 	all = comHand;
 	//sort first
@@ -70,10 +103,6 @@ public class Woo {
 	    }
 	}
 	//distinguish type of hand
-	for (int x = 0; x < all.size(); x++) {
-	    if ((((Card) all.get(all.size()-x)).value - ((Card)all.get(all.size()-(x+1))).value) == 1)
-		handType = "af";
-	    }
 	}
     }
     
