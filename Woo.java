@@ -3,10 +3,11 @@ import java.util.ArrayList;
 
 public class Woo {
     public ArrayList<Comparable> table;
+    static Player p1 = new Player();
 
     public static void deal() {
-	//	int deal = Math.random() * (Deck.getDeck().length + 1);
-	//	p1.addHand(deal);     not working
+      	int deal = (int) (Math.random() * (Deck.getDeck().size() + 1));
+       	p1.addHand(deal); 
     } //passes out cards from deck.java to table and hand of player
     public static void displayTable() {
     } //prints the table
@@ -21,7 +22,6 @@ public class Woo {
     }
     
     public static void main(String[] args) {
-	Player p1 = new Player();
 	System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
 	while (p1.balance > 0) {
 	    playTurn();

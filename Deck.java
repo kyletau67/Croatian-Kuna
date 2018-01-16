@@ -64,7 +64,7 @@ public class Deck {
 	    deck.add("c"+i); }
     }
 
-    public ArrayList<Comparable> getDeck() {
+    public static ArrayList<Comparable> getDeck() {
 	return deck;
     }
 
