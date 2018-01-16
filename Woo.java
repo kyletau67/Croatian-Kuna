@@ -5,6 +5,8 @@ public class Woo {
     public ArrayList<Comparable> table;
 
     public static void deal() {
+	//	int deal = Math.random() * (Deck.getDeck().length + 1);
+	//	p1.addHand(deal);     not working
     } //passes out cards from deck.java to table and hand of player
     public static void displayTable() {
     } //prints the table
