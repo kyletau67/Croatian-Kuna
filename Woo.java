@@ -97,25 +97,21 @@ public class Woo {
 	}
     }//LOOK AT THIS EX
     public boolean fourOfAKind() {
-	if( for (int x = 0; x < all.size()-3; x++) {
+	for (int x = 0; x < all.size()-3; x++) {
 		if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value) == ((Card)all.get(x+3).value)) {
-		    break;
+		    return false;
 		}
-	    }
-	    ) {
-	    return true;
 	}
+	return true;
     }
 
     public boolean threeOfAKind() {
-	if ( for (int x =0; x < all.size()-2; x++) {
+	for (int x =0; x < all.size()-2; x++) {
 		if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value)) {
-		    break;
+		    return false;
 		}
 	    }
-	    ) {
-	    return true;
-	}
+	return true;
     }
 
     
