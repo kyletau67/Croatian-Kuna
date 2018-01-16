@@ -59,11 +59,9 @@ public class Woo {
 	all = comHand;
 	//sort first
 	for( int partition = 1; partition < all.size(); partition++ ) {
-	    System.out.println( all ); 
-
+	    //System.out.println( all ); 
 	    for( int i = partition; i > 0; i-- ) {
-
-		if ( (all.(Deck.deck.get(i))).compareTo( all.get(i-1).(Deck.deck.get(i-1)) ) < 0 ) {
+		if ((all.get(i)).compareTo(all.get(i-1)) < 0) {
 		    all.set( i, all.set( i-1, all.get(i) ) ); 
 		}
 		else {
@@ -73,8 +71,8 @@ public class Woo {
 	}
 	//distinguish type of hand
 	for (int x = 0; x < all.size(); x++) {
-	    if ((all.get(all.size()-x).value) - (all.get(all.size()-(x+1)).value) == 1) {
-		handType = "rf";
+	    if ((((Card) all.get(all.size()-x)).value - ((Card)all.get(all.size()-(x+1))).value) == 1)
+		handType = "af";
 	    }
 	}
     }
