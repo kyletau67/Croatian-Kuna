@@ -18,8 +18,8 @@ public class Woo {
     } //prints the table
     public static void displayHand() {
     } //prints the hand
-    public static void bet(double amt) {
-	bet = amt;
+    public static void bet() {
+	bet = sc1.next();
     }
     public static void call() {
         pot += 100.0;    //set player bet to comp's bet
