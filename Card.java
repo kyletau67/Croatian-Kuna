@@ -4,7 +4,7 @@ import java.util.HashMap;
 public class Card {
 
     public String suit;
-    public int val;
+    public Object val;
     
     public Card(int key) {
 	Cardkeys k = new Cardkeys();
@@ -15,13 +15,16 @@ public class Card {
 	    val = 10;
 	}
 	else {
-	    val = Integer.parseInt(str.substring(0,1));
+	    try {
+		val = Integer.parseInt(str.substring(0,1));
+	    }
+	    catch (NumberFormatException e) {
+		val = str.substring(0,1);
+	    }
 	}
     }
 
     public static void main(String[] args) {
 	Card TwoOfD = new Card(1);
-	//System.out.println(TwoOfD.suit);
-	//System.out.println(TwoOfD.val);
     }
 }

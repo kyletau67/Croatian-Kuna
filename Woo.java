@@ -96,7 +96,7 @@ public class Woo {
     public boolean straight() {
 	ArrayList<Comparable> all = p1.all;
 	for (int x = 0; x < all.size(); x++) {
-	    if (!(retGet(x).val - retGet(x+1).val == 1)) {
+	    if (!(((retGet(x).val) - (retGet(x+1).val)) == 1)) {
 		return false; }
 	}  
 	return true;

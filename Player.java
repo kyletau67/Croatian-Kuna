@@ -11,6 +11,7 @@ public class Player {
     Scanner sc = new Scanner(System.in);
     
     public Player() {
+	Deck.resetDeck();
 	balance = 10000;
 	System.out.println("What is your name?");
 	name = sc.next();
