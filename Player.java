@@ -18,18 +18,12 @@ public class Player {
 	addHand(hand1);
 	int hand2 = (int) (Math.random() * (Deck.deck.size() + 1));
 	addHand(hand2);
-	int table1 = (int) (Math.random() * (Deck.deck.size() + 1));
-	table.add(Deck.deck.get(table1));
-	Deck.deck.remove(table1);
-	int table2 = (int) (Math.random() * (Deck.deck.size() + 1));
-	table.add(Deck.deck.get(table2));
-	Deck.deck.remove(table2);
     }
 
-    public static void addHand(int deal) {
-	hand.add(Deck.deck.get(deal));
-	all.add(Deck.deck.get(deal));
-	Deck.deck.remove(deal);
+    public static void addHand(int i) {
+	hand.add(Deck.deck.get(i));
+	all.add(Deck.deck.get(i));
+	Deck.deck.remove(i);
     }
     
     public static void main(String[] args) {
