@@ -3,6 +3,8 @@ import java.util.ArrayList;
 
 public class Woo {
     public ArrayList<Comparable> table;
+    public double bet;
+    public double pot;
     static Player p1 = new Player();
 
     public static void deal() {
@@ -13,6 +15,17 @@ public class Woo {
     } //prints the table
     public static void displayHand() {
     } //prints the hand
+    public static void call() {
+	bet = comp.bet;    //set player bet to comp's bet
+	pot = bet * 2; //money on the table = both your bet's
+    }
+    public static void raise() {
+	bet = sc1.next();  //set the bet to user input
+	pot = bet + comp.bet;  //comp.bet is computer's bet, subject to change
+    }
+    public static void fold() {
+	lose();
+    }
     public static void playTurn() {
         deal();
 	displayTable();
