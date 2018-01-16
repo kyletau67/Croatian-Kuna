@@ -64,6 +64,10 @@ public class Deck {
 	    deck.add("c"+i); }
     }
 
+    public ArrayList<Comparable> getDeck() {
+	return deck;
+    }
+
     public static void main(String[] args) {
     }
 }
