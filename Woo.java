@@ -33,7 +33,7 @@ public class Woo {
 	System.out.println();
     } //prints the table
     public static void displayHand() {
-	for (Object x: p1.getHand()) {
+	for (Object x: p1.hand) {
 	    Card h = (Card)(x);
 	    if (h.suit == "D") {
 		System.out.print("\u2666" + h.val + " ");
@@ -51,7 +51,7 @@ public class Woo {
 	System.out.println();
     } //prints the hand
     public static void bet() {
-	bet = sc1.next();
+	bet = Integer.parseInt(sc1.next());
     }
     public static void call() {
         pot += 100.0;    //set player bet to comp's bet
@@ -88,29 +88,37 @@ public class Woo {
     }
 
 
+    public Card retGet(int i) {
+	ArrayList<Comparable> all = p1.all;
+	return (Card)all.get(all.size()-i);
+    }
+    
     public boolean straight() {
+	ArrayList<Comparable> all = p1.all;
 	for (int x = 0; x < all.size(); x++) {
-	    if (!(((Card)all.get(all.size()-x)).value - ((Card)all.get(all.size()-(x+1))).value == 1)) {
+	    if (!(retGet(x).val - retGet(x+1).val == 1)) {
+		return false; }
+	}  
+	return true;
+    }
+    
+    public boolean fourOfAKind() {
+	ArrayList<Comparable> all = p1.all;
+	for (int x = 0; x < all.size()-3; x++) {
+	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val && retGet(x+2).val == retGet(x+3).val)) {
 		return false;
 	    }
-	    return true;
-	}
-    }//LOOK AT THIS EX
-    public boolean fourOfAKind() {
-	for (int x = 0; x < all.size()-3; x++) {
-		if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value) == ((Card)all.get(x+3).value)) {
-		    return false;
-		}
 	}
 	return true;
     }
 
     public boolean threeOfAKind() {
+	ArrayList<Comparable> all = p1.all;
 	for (int x =0; x < all.size()-2; x++) {
-		if (!((Card)all.get(x).value) == ((Card)all.get(x+1).value) == ((Card)all.get(x+2).value)) {
-		    return false;
-		}
+	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val)) {
+		return false;
 	    }
+	}
 	return true;
     }
 
@@ -132,20 +140,19 @@ public class Woo {
 	}
 	//distinguish type of hand
     }
-}
-    
-public static void main(String[] args) {
-    int table1 = (int) (Math.random() * (Deck.deck.size() + 1));
-    table.add(Deck.deck.get(table1));
-    comHand.add(Deck.deck.get(table1));
-    Deck.deck.remove(table1);
-    int table2 = (int) (Math.random() * (Deck.deck.size() + 1));
-    table.add(Deck.deck.get(table2));
-    comHand.add(Deck.deck.get(table2));
-    Deck.deck.remove(table2);
-    System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
-    while (p1.balance > 0) {
-	playTurn();
+
+    public static void main(String[] args) {
+	int table1 = (int) (Math.random() * (Deck.deck.size() + 1));
+	table.add(Deck.deck.get(table1));
+	comHand.add(Deck.deck.get(table1));
+	Deck.deck.remove(table1);
+	int table2 = (int) (Math.random() * (Deck.deck.size() + 1));
+	table.add(Deck.deck.get(table2));
+	comHand.add(Deck.deck.get(table2));
+	Deck.deck.remove(table2);
+	System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
+	while (p1.balance > 0) {
+	    playTurn();
+	}
     }
-}
 }
