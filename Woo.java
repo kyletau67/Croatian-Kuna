@@ -404,7 +404,7 @@ public class Woo {
 	comHand.add(Deck.deck.get(table2));
 	Deck.deck.remove(table2);
 	System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
-	while (p1.balance > 0) {
+	while ((p1.balance > 0)&&(table.size() <= 5)) {
 	    playTurn();
 	}
     }
