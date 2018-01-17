@@ -57,9 +57,6 @@ public class Deck {
     public static Card c50 = new Card(50);
     public static Card c51 = new Card(51);
     public static Card c52 = new Card(52);
-
-    public Deck() {
-	resetDeck(); }
     
     public static void resetDeck() {
        	deck.clear();
