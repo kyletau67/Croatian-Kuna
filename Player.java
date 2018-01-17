@@ -28,6 +28,11 @@ public class Player {
 	all.add(dk.deck.get(i));
 	dk.deck.remove(i);
     }
+
+    public static void addAll(int i) {
+	all.add(dk.deck.get(i));
+	dk.deck.remove(i);
+    }
     
     public static void main(String[] args) {
     }

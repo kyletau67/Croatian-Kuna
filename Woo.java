@@ -13,149 +13,155 @@ public class Woo {
     
     public static void deal() {
       	int deal = (int) (Math.random() * (Deck.getDeck().size() + 1));
-       	p1.addHand(deal); 
+	table.add(Deck.deck.get(deal));
+	comHand.add(Deck.deck.get(deal));
+	p1.addAll(deal);
     } //passes out cards from deck.java to table and hand of player
     public static void displayTable() {
+       	System.out.println("\n");
+	System.out.print("Table:   ");
 	for (Card t: table) {
 	    if (t.suit.equals("D")) {
 		if (t.val == 13 ) {
-		    System.out.print("\u2666" + "K ");
+		    System.out.print("\u2666" + "K  ");
 		}
 		else if (t.val == 14) {
-		    System.out.print("\u2666" + "A ");
+		    System.out.print("\u2666" + "A  ");
 		}
 		else if (t.val == 12) {
-		    System.out.print("\u2666" + "Q");
+		    System.out.print("\u2666" + "Q  ");
 		}
 	       	else if (t.val == 11) {
-		    System.out.print("\u2666" + "J ");
+		    System.out.print("\u2666" + "J  ");
 		}
 		else {
-		    System.out.print("\u2666" + t.val + " ");
+		    System.out.print("\u2666" + t.val + "  ");
 	        }
 	    }
 	    else if (t.suit.equals("C")) {
 		if (t.val == 13) {
-		    System.out.print("\u2663" + "K ");
+		    System.out.print("\u2663" + "K  ");
 		}
 		else if (t.val == 14) {
-		    System.out.print("\u2663" + "A ");
+		    System.out.print("\u2663" + "A  ");
 		}
 		else if (t.val == 12) {
-		    System.out.print("\u2663" + "Q");
+		    System.out.print("\u2663" + "Q  ");
 		}
 		else if (t.val == 11) {
-		    System.out.print("\u2663" + "J ");
+		    System.out.print("\u2663" + "J  ");
 		}
 		else {
-		    System.out.print("\u2663" + t.val + " ");
+		    System.out.print("\u2663" + t.val + "  ");
 		}
 	    }
 	    else if (t.suit.equals("H")) {
 		if (t.val == 13) {
-		    System.out.print("\u2764" + "K ");
+		    System.out.print("\u2764" + "K  ");
 		}
 		else if (t.val == 14) {
-		    System.out.print("\u2764" + "A ");
+		    System.out.print("\u2764" + "A  ");
 		}
 		else if (t.val == 12) {
-		    System.out.print("\u2764" + "Q");
+		    System.out.print("\u2764" + "Q  ");
 		}
 		else if (t.val == 11) {
-		    System.out.print("\u2764" + "J ");
+		    System.out.print("\u2764" + "J  ");
 		}
 		else {
-		    System.out.print("\u2764" + t.val + " ");
+		    System.out.print("\u2764" + t.val + "  ");
 		}
 	    }
 	    else {
 		if (t.val == 13) {
-		    System.out.print("\u2660" + "K ");
+		    System.out.print("\u2660" + "K  ");
 		}
 		else if (t.val == 14) {
-		    System.out.print("\u2660" + "A ");
+		    System.out.print("\u2660" + "A  ");
 		}
 		else if (t.val == 12) {
-		    System.out.print("\u2660" + "Q");
+		    System.out.print("\u2660" + "Q  ");
 		}
 		else if (t.val == 11) {
-		    System.out.print("\u2660" + "J ");
+		    System.out.print("\u2660" + "J  ");
 		}
 		else {
-		    System.out.print("\u2660" + t.val + " ");
+		    System.out.print("\u2660" + t.val + "  ");
 		}
 	    }
 	}
 	System.out.println();
     } //prints the table
     public static void displayHand() {
+       	System.out.println("\n");
+	System.out.print("Hand:   ");
 	for (Card h: p1.hand) {
 	    if (h.suit.equals("D")) {
 		if (h.val == 13) {
-		    System.out.print("\u2666" + "K ");
+		    System.out.print("\u2666" + "K  ");
 		}
 		else if (h.val == 14) {
-		    System.out.print("\u2666" + "A ");
+		    System.out.print("\u2666" + "A  ");
 		}
 		else if (h.val == 12) {
-		    System.out.print("\u2666" + "Q");
+		    System.out.print("\u2666" + "Q  ");
 		}
 		else if (h.val == 11) {
-		    System.out.print("\u2666" + "J ");
+		    System.out.print("\u2666" + "J  ");
 		}
 		else {
-		    System.out.print("\u2666" + h.val + " ");
+		    System.out.print("\u2666" + h.val + "  ");
 		}
 	    }
 	    else if (h.suit.equals("C")) {
 		if (h.val == 13) {
-		    System.out.print("\u2663" + "K ");
+		    System.out.print("\u2663" + "K  ");
 		}
 		else if (h.val == 14) {
-		    System.out.print("\u2663" + "A ");
+		    System.out.print("\u2663" + "A  ");
 		}
 		else if (h.val == 12) {
-		    System.out.print("\u2663" + "Q");
+		    System.out.print("\u2663" + "Q  ");
 		}
 		else if (h.val == 11) {
-		    System.out.print("\u2663" + "J ");
+		    System.out.print("\u2663" + "J  ");
 		}
 		else {
-		    System.out.print("\u2663" + h.val + " ");
+		    System.out.print("\u2663" + h.val + "  ");
 		}
 	    }
 	    else if (h.suit.equals("H")) {
 		if (h.val == 13) {
-		    System.out.print("\u2764" + "K ");
+		    System.out.print("\u2764" + "K  ");
 		}
 		else if (h.val == 14) {
-		    System.out.print("\u2764" + "A ");
+		    System.out.print("\u2764" + "A  ");
 		}
 		else if (h.val == 12) {
-		    System.out.print("\u2764" + "Q");
+		    System.out.print("\u2764" + "Q  ");
 		}
 		else if (h.val == 11) {
-		    System.out.print("\u2764" + "J ");
+		    System.out.print("\u2764" + "J  ");
 		}
 		else {
-		    System.out.print("\u2764" + h.val + " ");
+		    System.out.print("\u2764" + h.val + "  ");
 		}
 	    }
 	    else {
 		if (h.val == 13) {
-		    System.out.print("\u2660" + "K ");
+		    System.out.print("\u2660" + "K  ");
 		}
 		else if (h.val == 14) {
-		    System.out.print("\u2660" + "A ");
+		    System.out.print("\u2660" + "A  ");
 		}
 		else if (h.val == 12) {
-		    System.out.print("\u2660" + "Q");
+		    System.out.print("\u2660" + "Q  ");
 		}
 		else if (h.val == 11) {
-		    System.out.print("\u2660" + "J ");
+		    System.out.print("\u2660" + "J  ");
 		}
 		else {
-		    System.out.print("\u2660" + h.val + " ");
+		    System.out.print("\u2660" + h.val + "  ");
 		}
 	    }
 	}
@@ -214,7 +220,6 @@ public class Woo {
     public static void playTurn() {
 	deal();
 	displayTable();
-	System.out.println("Your Hand:");
 	displayHand();
 	System.out.println("(1) Call\n(2) Raise\n(3) Fold");
 	String response = sc1.next();
