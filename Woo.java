@@ -12,7 +12,7 @@ public class Woo {
     public static int pHandType; 
     
     public static void deal() {
-      	int deal = (int) (Math.random() * (Deck.getDeck().size() + 1));
+      	int deal = (int) (Math.random() * (Deck.getDeck().size()));
 	table.add(Deck.deck.get(deal));
 	comHand.add(Deck.deck.get(deal));
 	p1.addAll(deal);
@@ -395,11 +395,11 @@ public class Woo {
     }
 
     public static void main(String[] args) {
-	int table1 = (int) (Math.random() * (Deck.deck.size() + 1));
+	int table1 = (int) (Math.random() * (Deck.deck.size()));
 	table.add(Deck.deck.get(table1));
 	comHand.add(Deck.deck.get(table1));
 	Deck.deck.remove(table1);
-	int table2 = (int) (Math.random() * (Deck.deck.size() + 1));
+	int table2 = (int) (Math.random() * (Deck.deck.size()));
 	table.add(Deck.deck.get(table2));
 	comHand.add(Deck.deck.get(table2));
 	Deck.deck.remove(table2);

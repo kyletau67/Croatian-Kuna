@@ -17,9 +17,9 @@ public class Player {
 	balance = 10000;
 	System.out.println("What is your name?");
 	name = sc.next();
-	int hand1 = (int) (Math.random() * (dk.deck.size() + 1));
+	int hand1 = (int) (Math.random() * (dk.deck.size()));
 	addHand(hand1);
-	int hand2 = (int) (Math.random() * (dk.deck.size() + 1));
+	int hand2 = (int) (Math.random() * (dk.deck.size()));
 	addHand(hand2);
     }
 
