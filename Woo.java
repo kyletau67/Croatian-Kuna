@@ -232,6 +232,37 @@ public class Woo {
 	return true;
     }
 
+
+    public boolean highCard?() { 
+	if (!(straight?) && !(fourOfAKind?) && !(threeOfAKind?) && !(twoPair?) && !(pair?) && !(flush?) && !(fullHouse?)) { 
+	    return true;
+	}
+	else { 
+	    return false;
+      	}
+    }
+
+    public boolean straightFlush?() { 
+	if (straight?() && flush?()) {
+	    return true;
+	}
+	else { 
+	    return false; 
+	}
+    }
+
+
+    public boolean royalFlush?() {
+	for (int x = 0; x < all.size()-5; x++) { 
+	    if (straightFlush?() && retGet(x).val == 10) {
+		return true;
+	    }
+	    else {
+		return false;
+	    }
+	}
+    }
+
     
 
     public static void findHandType(ArrayList<Card> all) {
