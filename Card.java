@@ -12,18 +12,8 @@ public class Card {
 	String str = (String)k.get(key);
 	System.out.println(str);
 	suit = str.substring(str.length()-1);
-	int suitM = 0;
-	if (suit.equals("C")) {
-	    suitM = 1;
-	}
-	if (suit.equals("H")) {
-	    suitM = 2;
-	}
-	if (suit.equals("S")) {
-	    suitM = 3;
-	}
 	if (key % 13 == 9) {
-	    val = 10 + (suitM * 13);
+	    val = 10;
 	}
 	else {
 	    try {
@@ -31,16 +21,16 @@ public class Card {
 	    }
 	    catch (NumberFormatException e) {
 		if (str.substring(0,1).equals("J")) {
-		    val = 11 + (suitM * 13);
+		    val = 11;
 		}
 		else if (str.substring(0,1).equals("Q")) {
-		    val = 12 + (suitM * 13);
+		    val = 12;
 		}
 		else if (str.substring(0,1).equals("K")) {
-		    val = 13 + (suitM * 13);
+		    val = 13;
 		}
 		else {
-		    val = 14 + (suitM * 13);
+		    val = 14;
 		}
 	    }
 	}
