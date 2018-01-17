@@ -168,7 +168,8 @@ public class Woo {
 	System.out.println();
     } //prints the hand
     public static void bet() {
-	bet = Integer.parseInt(sc1.next());
+	String num = sc1.next();
+	bet = Integer.parseInt(num);
     }
     public static void call() {
 	pot += 100.0;    //set player bet to comp's bet
@@ -197,12 +198,18 @@ public class Woo {
 	System.out.println("You won $$$.");
 	pot = 0;
 	bet = 0;
+	table.clear();
+	p1.hand.clear();
+	comHand.clear();
     }
     public static void lose() {
 	p1.balance -= bet;
 	System.out.println("You lost $$$.");
 	pot = 0;
 	bet = 0;
+	table.clear();
+	p1.hand.clear();
+	comHand.clear();
     }
     public static void comTurn() {
 	comHandType = findHandType(comHand);
@@ -221,10 +228,10 @@ public class Woo {
 	deal();
 	displayTable();
 	displayHand();
-	System.out.println("(1) Call\n(2) Raise\n(3) Fold");
+	System.out.println("(1) Bet\n(2) Raise\n(3) Fold");
 	String response = sc1.next();
 	if (response == "1") {
-	    call(); }
+	    bet(); }
 	else if (response == "2") {
 	    System.out.println("How much would you like to raise?");
 	    raise(); }
@@ -235,7 +242,7 @@ public class Woo {
 
 
     public static Card retGet(ArrayList<Card> hand, int i) {
-	return hand.get(hand.size()-i);
+	return hand.get(hand.size()-i-1);
     }
     
     public static boolean straight(ArrayList<Card> hand) {
@@ -404,7 +411,7 @@ public class Woo {
 	comHand.add(Deck.deck.get(table2));
 	Deck.deck.remove(table2);
 	System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
-	while ((p1.balance > 0)&&(table.size() <= 5)) {
+	while ((p1.balance > 0)&&(table.size() < 5)&&table.size()>0) {
 	    playTurn();
 	}
     }
