@@ -209,6 +209,9 @@ public class Woo {
 	pot = 0;
 	bet = 0;
 	System.out.println("Your $$: " + p1.balance);
+	table.clear();
+	comHand.clear();
+	p1.hand.clear();
     }
     public static void lose() {  //subtract money from your balance 
 	p1.balance -= bet;
@@ -216,6 +219,9 @@ public class Woo {
 	pot = 0;
 	bet = 0;
 	System.out.println("Your $$: " + p1.balance);
+	table.clear();
+	comHand.clear();
+	p1.hand.clear();
     }
     public static void comTurn() {   //actions that the computer will randomly take
 	comHandType = findHandType(comHand);
