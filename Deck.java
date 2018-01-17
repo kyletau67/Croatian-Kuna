@@ -58,6 +58,9 @@ public class Deck {
     public static Card c51 = new Card(51);
     public static Card c52 = new Card(52);
 
+    public Deck() {
+	resetDeck(); }
+    
     public static void resetDeck() {
        	deck.clear();
         deck.add(c1);
@@ -112,7 +115,7 @@ public class Deck {
         deck.add(c50);
 	deck.add(c51);
 	deck.add(c52);
-	//System.out.println(deck);
+	//System.out.println(deck.size()+"");
     }
 
     public static ArrayList<Card> getDeck() {
@@ -121,8 +124,8 @@ public class Deck {
     
     public static void main(String[] args) {
 	resetDeck();
-	for (Object o: deck) {
+	/*for (Object o: deck) {
 	    System.out.println(o);
-	}
+	    }*/
     }
 }

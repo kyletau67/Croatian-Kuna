@@ -2,12 +2,12 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Woo {
-    public static ArrayList<Card> table;
+    public static ArrayList<Card> table = new ArrayList<Card>();
     public static double bet;
     public static double pot;
-    static Player p1 = new Player();
+    public static Player p1 = new Player();
     static Scanner sc1 = new Scanner(System.in);
-    public static ArrayList<Card> comHand;
+    public static ArrayList<Card> comHand = new ArrayList<Card>();
     public static int comHandType;
     public static int pHandType; 
     
