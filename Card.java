@@ -46,6 +46,10 @@ public class Card {
 	}
     }
 
+    public int compareTo(int i) {
+	return this.val - i;
+    }
+
     public static void main(String[] args) {
 	Card TwoOfD = new Card(1);
 	System.out.println(TwoOfD.suit);
