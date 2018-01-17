@@ -203,7 +203,7 @@ public class Woo {
 	return all.get(all.size()-i);
     }
     
-    public boolean straight?() {
+    public boolean straight() {
 	ArrayList<Card> all = p1.all;
 	for (int x = 0; x < all.size(); x++) {
 	    if (!(((retGet(x).val) - (retGet(x+1).val)) == 1)) {
@@ -212,7 +212,7 @@ public class Woo {
 	return true;
     }
     
-    public boolean fourOfAKind?() {
+    public boolean fourOfAKind() {
 	ArrayList<Card> all = p1.all;
 	for (int x = 0; x < all.size()-3; x++) {
 	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val && retGet(x+2).val == retGet(x+3).val)) {
@@ -222,7 +222,7 @@ public class Woo {
 	return true;
     }
 
-    public boolean threeOfAKind?() {
+    public boolean threeOfAKind() {
 	ArrayList<Card> all = p1.all;
 	for (int x =0; x < all.size()-2; x++) {
 	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val)) {
@@ -233,28 +233,29 @@ public class Woo {
     }
 
 
-    public boolean highCard?() { 
-	if (!(straight?) && !(fourOfAKind?) && !(threeOfAKind?) && !(twoPair?) && !(pair?) && !(flush?) && !(fullHouse?)) { 
+    public boolean highCard() {
+	if (!(straight()) && !(fourOfAKind()) && !(threeOfAKind()) && !(twoPair()) && !(pair()) && !(flush()) && !(fullHouse())) {
 	    return true;
 	}
-	else { 
+	else {
 	    return false;
       	}
     }
 
-    public boolean straightFlush?() { 
-	if (straight?() && flush?()) {
+    public boolean straightFlush() {
+	if (straight() && flush()) {
 	    return true;
 	}
-	else { 
-	    return false; 
+	else {
+	    return false;
 	}
     }
 
 
-    public boolean royalFlush?() {
-	for (int x = 0; x < all.size()-5; x++) { 
-	    if (straightFlush?() && retGet(x).val == 10) {
+    public boolean royalFlush() {
+	ArrayList<Card> all = p1.all;
+	for (int x = 0; x < all.size()-5; x++) {
+	    if (straightFlush() && retGet(x).val == 10) {
 		return true;
 	    }
 	    else {
@@ -263,32 +264,34 @@ public class Woo {
 	}
     }
 
-    public boolean twoPair?() {
+    public boolean twoPair() {
+	ArrayList<Card> all = p1.all;
 	int  count = 0;
 	for (int x = 0; x < all.size() - 1; x++) {
 	    if (( all.get(x).val) == (all.get(x+1).val)) {
 		count += 1; 
 	    }
 	}
-	if (count == 2) { 
+	if (count == 2) {
 	    return true;
 	}
-	else { 
+	else {
 	    return false;
 	}
     }
 
-    public boolean pair?() { 
+    public boolean pair() {
+	ArrayList<Card> all = p1.all;
 	int  count = 0;
 	for (int x = 0; x < all.size() - 1; x++) {
 	    if (( all.get(x).val) == (all.get(x+1).val)) {
 		count += 1; 
 	    }
 	}
-	if (count == 1) { 
+	if (count == 1) {
 	    return true;
 	}
-	else { 
+	else {
 	    return false;
 	}
     }
