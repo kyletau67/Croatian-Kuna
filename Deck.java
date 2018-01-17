@@ -120,9 +120,9 @@ public class Deck {
     }
     
     public static void main(String[] args) {
-	resetDeck();
-	for (Object o: deck) {
-	    System.out.println(o);
+	//resetDeck();
+	//	for (Object o: deck) {
+	//  System.out.println(o);
 	}
     }
 }

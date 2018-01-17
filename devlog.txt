@@ -32,7 +32,7 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
+<Initially, we used ArrayList<Comparable> so that we can compare the value of the cards that the player has access to in order to form high hands. However, we discovered that by doing so, we cannot put our object Card into the hand and table of the game. We overcame this obstacle by changing the generic typing to <Card> instead and writing our own compareTo method to replace the Comparable one's. Another obstacle we encountered was that we tried to use a for loop to add objects of card into the deck of cards. However, the for loop only added strings of the name of the objects instead of the actual objects. We resolved this problem by simply adding each object in manually. For a lot of our methods and variables, we encountered errors when we ran them. This was simply fixed by us adding static to their signature.>
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,17 +43,17 @@ maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+<We learned how to using mapping to assign a "key" to each card of a poker deck. This allowed us to create a specific card with a specific suit and value when we instantiate an Object of Card using that specific key as a parameter. We also discovered certain terminal code that would translate into a picture of a heart or diamond when printed in the terminal. This allowed us to make our game of Texas Hold 'Em much more visually pleasing. We also learned about the .clear() method of ArrayList, allowing us to reset the deck of cards for each new game.>
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We changed ___ to ___ bc...
-<etc>
+<Initially, we were planning to use an abstract class for player and computer. However, we realized that both of them are very different and decided against using abstract classes. We also decided to get rid of typecasting because as explained previously, we find that <Comparable> interferes with the code more than it helps so we kept all generic typing to <Card>. We have also decided to scrap the idea that player being able to keep their balance after they quit the terminal because that is too difficult to do. We have also decided to scrap multiplayer due to time constraints.>
 <etc>
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<tales of wisdom gained...>
+<From this project, we learned about how important it was to coordinate our work times so that we could work efficiently together. We were able to achieve this by having one person on the keyboard while the other two guide that person in coding. We also realized the importance of having an MVP first so that the error messages don't pile up as we near our finished product.>
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
