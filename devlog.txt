@@ -9,21 +9,7 @@ Texas Hold Em
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-  (from tilde bar above to tilde bar below)
 
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -37,8 +23,7 @@ OBSTACLES OVERCOME
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+There are no discernable bugs so far.
 >
 
 COOL STUFF LEARNED
@@ -48,7 +33,7 @@ COOL STUFF LEARNED
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We changed ___ to ___ bc...
-<Initially, we were planning to use an abstract class for player and computer. However, we realized that both of them are very different and decided against using abstract classes. We also decided to get rid of typecasting because as explained previously, we find that <Comparable> interferes with the code more than it helps so we kept all generic typing to <Card>. We have also decided to scrap the idea that player being able to keep their balance after they quit the terminal because that is too difficult to do. We have also decided to scrap multiplayer due to time constraints.>
+<Initially, we were planning to use an abstract class for player and computer. However, we realized that both of them are very different and decided against using abstract classes. We also decided to get rid of typecasting because as explained previously, we find that <Comparable> interferes with the code more than it helps so we kept all generic typing to <Card>. We have also decided to scrap the idea that player being able to keep their balance after they quit the terminal because that is too difficult to do. We have also decided to scrap multiplayer due to time constraints. We were not able to save balance across games because it was too difficult and time-consuming.>
 <etc>
 
 LESSONS LEARNED
