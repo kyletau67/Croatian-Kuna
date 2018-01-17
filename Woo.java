@@ -17,16 +17,16 @@ public class Woo {
     public static void displayTable() {
 	for (Card t: table) {
 	    if (t.suit == "D") {
-		if (t.val % 13 == 0) {
+		if (t.val == 13 ) {
 		    System.out.print("\u2666" + "K ");
 		}
-		else if (t.val % 13 == 1) {
+		else if (t.val == 14) {
 		    System.out.print("\u2666" + "A ");
 		}
-		else if (t.val % 13 == 12) {
+		else if (t.val == 12) {
 		    System.out.print("\u2666" + "Q");
 		}
-	       	else if (t.val % 13 == 11) {
+	       	else if (t.val == 11) {
 		    System.out.print("\u2666" + "J ");
 		}
 		else {
@@ -34,16 +34,16 @@ public class Woo {
 	        }
 	    }
 	    else if (t.suit == "C") {
-		if (t.val % 13 == 0) {
+		if (t.val == 13) {
 		    System.out.print("\u2663" + "K ");
 		}
-		else if (t.val % 13 == 1) {
+		else if (t.val == 14) {
 		    System.out.print("\u2663" + "A ");
 		}
-		else if (t.val % 13 == 12) {
+		else if (t.val == 12) {
 		    System.out.print("\u2663" + "Q");
 		}
-		else if (t.val % 13 == 11) {
+		else if (t.val == 11) {
 		    System.out.print("\u2663" + "J ");
 		}
 		else {
@@ -51,16 +51,16 @@ public class Woo {
 		}
 	    }
 	    else if (t.suit == "H") {
-		if (t.val % 13 == 0) {
+		if (t.val == 13) {
 		    System.out.print("\u2764" + "K ");
 		}
-		else if (t.val % 13 == 1) {
+		else if (t.val == 14) {
 		    System.out.print("\u2764" + "A ");
 		}
-		else if (t.val % 13 == 12) {
+		else if (t.val == 12) {
 		    System.out.print("\u2764" + "Q");
 		}
-		else if (t.val % 13 == 11) {
+		else if (t.val == 11) {
 		    System.out.print("\u2764" + "J ");
 		}
 		else {
@@ -68,16 +68,16 @@ public class Woo {
 		}
 	    }
 	    else {
-		if (t.val % 13 == 0) {
+		if (t.val == 13) {
 		    System.out.print("\u2660" + "K ");
 		}
-		else if (t.val % 13 == 1) {
+		else if (t.val == 14) {
 		    System.out.print("\u2660" + "A ");
 		}
-		else if (t.val % 13 == 12) {
+		else if (t.val == 12) {
 		    System.out.print("\u2660" + "Q");
 		}
-		else if (t.val % 13 == 11) {
+		else if (t.val == 11) {
 		    System.out.print("\u2660" + "J ");
 		}
 		else {
@@ -90,16 +90,16 @@ public class Woo {
     public static void displayHand() {
 	for (Card h: p1.hand) {
 	    if (h.suit == "D") {
-		if (h.val % 13 == 0) {
+		if (h.val == 13) {
 		    System.out.print("\u2666" + "K ");
 		}
-		else if (h.val % 13 == 1) {
+		else if (h.val == 14) {
 		    System.out.print("\u2666" + "A ");
 		}
-		else if (h.val % 13 == 12) {
+		else if (h.val == 12) {
 		    System.out.print("\u2666" + "Q");
 		}
-		else if (h.val % 13 == 11) {
+		else if (h.val == 11) {
 		    System.out.print("\u2666" + "J ");
 		}
 		else {
@@ -107,16 +107,16 @@ public class Woo {
 		}
 	    }
 	    else if (h.suit == "C") {
-		if (h.val % 13 == 0) {
+		if (h.val == 13) {
 		    System.out.print("\u2663" + "K ");
 		}
-		else if (h.val % 13 == 1) {
+		else if (h.val == 14) {
 		    System.out.print("\u2663" + "A ");
 		}
-		else if (h.val % 13 == 12) {
+		else if (h.val == 12) {
 		    System.out.print("\u2663" + "Q");
 		}
-		else if (h.val % 13 == 11) {
+		else if (h.val == 11) {
 		    System.out.print("\u2663" + "J ");
 		}
 		else {
@@ -124,16 +124,16 @@ public class Woo {
 		}
 	    }
 	    else if (h.suit == "H") {
-		if (h.val % 13 == 0) {
+		if (h.val == 13) {
 		    System.out.print("\u2764" + "K ");
 		}
-		else if (h.val % 13 == 1) {
+		else if (h.val == 14) {
 		    System.out.print("\u2764" + "A ");
 		}
-		else if (h.val % 13 == 12) {
+		else if (h.val == 12) {
 		    System.out.print("\u2764" + "Q");
 		}
-		else if (h.val % 13 == 11) {
+		else if (h.val == 11) {
 		    System.out.print("\u2764" + "J ");
 		}
 		else {
@@ -141,16 +141,16 @@ public class Woo {
 		}
 	    }
 	    else {
-		if (h.val % 13 == 0) {
+		if (h.val == 13) {
 		    System.out.print("\u2660" + "K ");
 		}
-		else if (h.val % 13 == 1) {
+		else if (h.val == 14) {
 		    System.out.print("\u2660" + "A ");
 		}
-		else if (h.val % 13 == 12) {
+		else if (h.val == 12) {
 		    System.out.print("\u2660" + "Q");
 		}
-		else if (h.val % 13 == 11) {
+		else if (h.val == 11) {
 		    System.out.print("\u2660" + "J ");
 		}
 		else {
@@ -203,7 +203,7 @@ public class Woo {
 	return all.get(all.size()-i);
     }
     
-    public boolean straight() {
+    public boolean straight?() {
 	ArrayList<Card> all = p1.all;
 	for (int x = 0; x < all.size(); x++) {
 	    if (!(((retGet(x).val) - (retGet(x+1).val)) == 1)) {
@@ -212,7 +212,7 @@ public class Woo {
 	return true;
     }
     
-    public boolean fourOfAKind() {
+    public boolean fourOfAKind?() {
 	ArrayList<Card> all = p1.all;
 	for (int x = 0; x < all.size()-3; x++) {
 	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val && retGet(x+2).val == retGet(x+3).val)) {
@@ -222,7 +222,7 @@ public class Woo {
 	return true;
     }
 
-    public boolean threeOfAKind() {
+    public boolean threeOfAKind?() {
 	ArrayList<Card> all = p1.all;
 	for (int x =0; x < all.size()-2; x++) {
 	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val)) {
@@ -262,8 +262,6 @@ public class Woo {
 	    }
 	}
     }
-
-    
 
     public static void findHandType(ArrayList<Card> all) {
 	all = comHand;
