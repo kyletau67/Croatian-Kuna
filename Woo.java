@@ -12,10 +12,15 @@ public class Woo {
     public static int pHandType; 
     
     public static void deal() {
+<<<<<<< HEAD
       	int deal = (int) (Math.random() * (Deck.getDeck().size() + 1));
 	table.add(Deck.deck.get(deal));
 	comHand.add(Deck.deck.get(deal));
 	p1.addAll(deal);
+=======
+      	int deal = (int) (Math.random() * (Deck.getDeck().size()));
+       	p1.addHand(deal); 
+>>>>>>> c26678e69736dbee9cfb71039746e0479d18c525
     } //passes out cards from deck.java to table and hand of player
     public static void displayTable() {
        	System.out.println("\n");
