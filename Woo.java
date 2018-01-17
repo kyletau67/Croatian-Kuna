@@ -196,7 +196,7 @@ public class Woo {
 	win();
     }
     public static void fold() {
-	System.out.println("You lost " + bet);
+	System.out.println("You lost" + bet);
 	lose();
     }
     public static void win() {
@@ -409,17 +409,6 @@ public class Woo {
 	    return 1; }
     }
 
-    public static void compare() {
-	System.out.println("Final Comparisons!");
-	//display computer hand
-	pHandType = findHandType(p1.all);
-	if (pHandType > comHandType) {
-	    win(); }
-	else if (pHandType < comHandType) {
-	    lose(); }
-	else {
-	    lose(); }//subject to change, if we actually want to compare
-    }
     public static void main(String[] args) {
 	int table1 = (int) (Math.random() * (Deck.deck.size()));
 	table.add(Deck.deck.get(table1));
@@ -433,6 +422,5 @@ public class Woo {
 	while ((p1.balance > 0)&&(table.size() < 5)&&table.size()>0) {
 	    playTurn();
 	}
-	compare();
     }
 }
