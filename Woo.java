@@ -17,6 +17,7 @@ public class Woo {
 	comHand.add(Deck.deck.get(deal));
 	p1.addAll(deal);
     } //passes out cards from deck.java to table and hand of player
+    
     public static void displayTable() {
        	System.out.println("\n");
 	System.out.print("Table:   ");
@@ -92,6 +93,7 @@ public class Woo {
 	}
 	System.out.println();
     } //prints the table
+    
     public static void displayHand() {
        	System.out.println("\n");
 	System.out.print("Hand:   ");
@@ -170,6 +172,7 @@ public class Woo {
     public static void bet() {
 	String num = sc1.next();
 	bet = Integer.parseInt(num);
+	pot += bet;
     }
     public static void call() {
 	pot += 100.0;    //set player bet to comp's bet
@@ -204,19 +207,13 @@ public class Woo {
 	System.out.println("You won $$$.");
 	pot = 0;
 	bet = 0;
-	table.clear();
-	p1.hand.clear();
-	comHand.clear();
 	System.out.println("Your $$: " + p1.balance);
     }
     public static void lose() {
-	p1.balance -= bet;
+	p1.balance -= pot;
 	System.out.println("You lost $$$.");
 	pot = 0;
 	bet = 0;
-	table.clear();
-	p1.hand.clear();
-	comHand.clear();
 	System.out.println("Your $$: " + p1.balance);
     }
     public static void comTurn() {
@@ -260,7 +257,7 @@ public class Woo {
     }
     
     public static boolean straight(ArrayList<Card> hand) {
-	for (int x = 0; x < hand.size(); x++) {
+	for (int x = 0; x < hand.size() - 1; x++) {
 	    if (!(((retGet(hand, x).val) - (retGet(hand, x+1).val)) == 1)) {
 		return false; }
 	}  
@@ -269,11 +266,11 @@ public class Woo {
     
     public static boolean fourOfAKind(ArrayList<Card> hand) {
 	for (int x = 0; x < hand.size()-3; x++) {
-	    if (!(retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val && retGet(hand, x+2).val == retGet(hand, x+3).val)) {
-		return false;
+	    if ((retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val && retGet(hand, x+2).val == retGet(hand, x+3).val)) {
+		return true;
 	    }
 	}
-	return true;
+	return false;
     }
 
     public static boolean threeOfAKind(ArrayList<Card> hand) {
@@ -367,22 +364,24 @@ public class Woo {
 
 
     public static boolean flush(ArrayList<Card> hand) {
-	int matchCount = 0;
+	int heartMatchCount = 0;
+	int spadeMatchCount = 0;
+	int diamondMatchCount = 0;
+	int clubMatchCount = 0;
 	for (int x = 0; x < hand.size(); x++) {
-	    for (int b = x + 1; b < hand.size(); b++) {
-		if (retGet(hand, x).suit.equals( retGet(hand, b).suit)) {
-		    matchCount++;
-		}
-	    }
-        }
-	return matchCount >= 5;
+
+	    if (retGet(hand, x).suit.equals("H")) heartMatchCount++;
+	    if (retGet(hand, x).suit.equals("S")) spadeMatchCount++;
+	    if (retGet(hand, x).suit.equals("D")) diamondMatchCount++;
+	    if (retGet(hand, x).suit.equals("C")) clubMatchCount++;
+        }	
+	return false;
     }
     
 
     public static int findHandType(ArrayList<Card> all) {
 	//sort first
 	for( int partition = 1; partition < all.size(); partition++ ) {
-	    //System.out.println( all ); 
 	    for( int i = partition; i > 0; i-- ) {
 		if ((all.get(i)).compareTo(all.get(i-1).val) < 0) {
 		    all.set( i, all.set( i-1, all.get(i) ) ); 
@@ -392,7 +391,8 @@ public class Woo {
 		}
 	    }
 	}
-	//distinguish type of hand
+	
+	
         if (royalFlush(all)) {
 	    return 10; }
 	else if (straightFlush(all)) {
@@ -415,10 +415,29 @@ public class Woo {
 	    return 1; }
     }
 
+    public static String getHandType(int handType) {
+	if (handType == 10) return("Royal Flush");
+	if (handType == 9) return("Straight Flush");
+	if (handType == 8) return("Four of a Kind");
+	if (handType == 7) return("Full House");
+	if (handType == 6) return("Flush");
+	if (handType == 5) return("Straight");
+	if (handType == 4) return("Three of a Kind");
+	if (handType == 3) return("Two Pair");
+	if (handType == 2) return("Pair");
+	if (handType == 1) return("High Card");
+	return("");
+    }
+    
     public static void compare() {
 	System.out.println("Final Comparisons!");
-	//display computer hand
+	System.out.println("Computer had: " + getHandType(comHandType));
+
+	p1.all.add(table.get(0));
+	p1.all.add(table.get(1));
+	
 	pHandType = findHandType(p1.all);
+	System.out.println("You had: " + getHandType(pHandType));
 	if (pHandType > comHandType) {
 	    win(); }
 	else if (pHandType < comHandType) {
@@ -435,10 +454,22 @@ public class Woo {
 	table.add(Deck.deck.get(table2));
 	comHand.add(Deck.deck.get(table2));
 	Deck.deck.remove(table2);
+
+	int com1  = (int) (Math.random() * (Deck.deck.size()));
+	comHand.add(Deck.deck.get(com1));
+	Deck.deck.remove(com1);
+	int com2  = (int) (Math.random() * (Deck.deck.size()));
+	comHand.add(Deck.deck.get(com2));
+	Deck.deck.remove(com2);
+
 	System.out.println("Hello, "+p1.name+". Your balance is 10000. Let's Play Texas Hold Em!");
 	while ((p1.balance > 0)&&(table.size() < 5)&&table.size()>0) {
 	    playTurn();
 	}
 	compare();
+	
+	table.clear();
+	p1.hand.clear();
+	comHand.clear();
     }
 }

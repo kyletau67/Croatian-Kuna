@@ -13,7 +13,6 @@ public class Player {
     
     public Player() {
 	dk.resetDeck();
-	System.out.println("yo");
 	balance = 10000;
 	System.out.println("What is your name?");
 	name = sc.next();
