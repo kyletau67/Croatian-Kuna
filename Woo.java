@@ -198,14 +198,13 @@ public class Woo {
     }
 
 
-    public Card retGet(int i) {
-	ArrayList<Card> all = p1.all;
-	return all.get(all.size()-i);
+    public static Card retGet(ArrayList<Card> hand, int i) {
+	return hand.get(hand.size()-i);
     }
     
     public static boolean straight(ArrayList<Card> hand) {
 	for (int x = 0; x < hand.size(); x++) {
-	    if (!(((retGet(x).val) - (retGet(x+1).val)) == 1)) {
+	    if (!(((retGet(hand, x).val) - (retGet(hand, x+1).val)) == 1)) {
 		return false; }
 	}  
 	return true;
@@ -213,7 +212,7 @@ public class Woo {
     
     public static boolean fourOfAKind(ArrayList<Card> hand) {
 	for (int x = 0; x < hand.size()-3; x++) {
-	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val && retGet(x+2).val == retGet(x+3).val)) {
+	    if (!(retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val && retGet(hand, x+2).val == retGet(hand, x+3).val)) {
 		return false;
 	    }
 	}
@@ -221,8 +220,8 @@ public class Woo {
     }
 
     public static boolean threeOfAKind(ArrayList<Card> hand) {
-	for (int x =0; x < hand.size()-2; x++) {
-	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val)) {
+	for (int x = 0; x < hand.size()-2; x++) {
+	    if (!(retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val)) {
 		return false;
 	    }
 	}
@@ -251,7 +250,7 @@ public class Woo {
 
     public static boolean royalFlush(ArrayList<Card> hand) {
 	for (int x = 0; x < hand.size()-5; x++) {
-	    if (straightFlush(hand) && retGet(x).val == 10) {
+	    if (straightFlush(hand) && retGet(hand, x).val == 10) {
 		return true;
 	    }
 	    else {
@@ -290,6 +289,28 @@ public class Woo {
 	}
     }
 
+    public static boolean fullHouse(ArrayList<Card> hand) {
+        
+        int thisVal; 
+	for (int x = 0; x < hand.size()-2; x++) {
+	    if (!(retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val)) {
+                thisVal = retGet(hand, x).val;
+		return false;
+	    }
+	}
+
+	ArrayList<Card> tmpHand = new ArrayList<Card>();
+        for (int x =0; x < hand.size(); x++) {
+	    if ( retGet(hand, x).val != thisVal) {
+		tmpHand.add(retGet(hand, x));
+	    }
+	}
+
+	return pair(tmpHand);
+    }
+
+
+    
 
     public static void findHandType(ArrayList<Card> all) {
 	all = comHand;
