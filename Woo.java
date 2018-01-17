@@ -203,18 +203,16 @@ public class Woo {
 	return all.get(all.size()-i);
     }
     
-    public boolean straight() {
-	ArrayList<Card> all = p1.all;
-	for (int x = 0; x < all.size(); x++) {
+    public static boolean straight(ArrayList<Card> hand) {
+	for (int x = 0; x < hand.size(); x++) {
 	    if (!(((retGet(x).val) - (retGet(x+1).val)) == 1)) {
 		return false; }
 	}  
 	return true;
     }
     
-    public boolean fourOfAKind() {
-	ArrayList<Card> all = p1.all;
-	for (int x = 0; x < all.size()-3; x++) {
+    public static boolean fourOfAKind(ArrayList<Card> hand) {
+	for (int x = 0; x < hand.size()-3; x++) {
 	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val && retGet(x+2).val == retGet(x+3).val)) {
 		return false;
 	    }
@@ -222,9 +220,8 @@ public class Woo {
 	return true;
     }
 
-    public boolean threeOfAKind() {
-	ArrayList<Card> all = p1.all;
-	for (int x =0; x < all.size()-2; x++) {
+    public static boolean threeOfAKind(ArrayList<Card> hand) {
+	for (int x =0; x < hand.size()-2; x++) {
 	    if (!(retGet(x).val == retGet(x+1).val && retGet(x+1).val == retGet(x+2).val)) {
 		return false;
 	    }
@@ -233,8 +230,8 @@ public class Woo {
     }
 
 
-    public boolean highCard() {
-	if (!(straight()) && !(fourOfAKind()) && !(threeOfAKind()) && !(twoPair()) && !(pair()) && !(flush()) && !(fullHouse())) {
+    public static boolean highCard(ArrayList<Card> hand) {
+	if (!(straight(hand)) && !(fourOfAKind(hand)) && !(threeOfAKind(hand)) && !(twoPair(hand)) && !(pair(hand)) && !(flush(hand)) && !(fullHouse(hand))) {
 	    return true;
 	}
 	else {
@@ -242,8 +239,8 @@ public class Woo {
       	}
     }
 
-    public boolean straightFlush() {
-	if (straight() && flush()) {
+    public static boolean straightFlush(ArrayList<Card> hand) {
+	if (straight(hand) && flush(hand)) {
 	    return true;
 	}
 	else {
@@ -252,10 +249,9 @@ public class Woo {
     }
 
 
-    public boolean royalFlush() {
-	ArrayList<Card> all = p1.all;
-	for (int x = 0; x < all.size()-5; x++) {
-	    if (straightFlush() && retGet(x).val == 10) {
+    public static boolean royalFlush(ArrayList<Card> hand) {
+	for (int x = 0; x < hand.size()-5; x++) {
+	    if (straightFlush(hand) && retGet(x).val == 10) {
 		return true;
 	    }
 	    else {
@@ -264,11 +260,10 @@ public class Woo {
 	}
     }
 
-    public boolean twoPair() {
-	ArrayList<Card> all = p1.all;
+    public static boolean twoPair(ArrayList<Card> hand) {
 	int  count = 0;
-	for (int x = 0; x < all.size() - 1; x++) {
-	    if (( all.get(x).val) == (all.get(x+1).val)) {
+	for (int x = 0; x < hand.size() - 1; x++) {
+	    if (( hand.get(x).val) == (hand.get(x+1).val)) {
 		count += 1; 
 	    }
 	}
@@ -280,11 +275,10 @@ public class Woo {
 	}
     }
 
-    public boolean pair() {
-	ArrayList<Card> all = p1.all;
+    public static boolean pair(ArrayList<Card> hand) {
 	int  count = 0;
-	for (int x = 0; x < all.size() - 1; x++) {
-	    if (( all.get(x).val) == (all.get(x+1).val)) {
+	for (int x = 0; x < hand.size() - 1; x++) {
+	    if (( hand.get(x).val) == (hand.get(x+1).val)) {
 		count += 1; 
 	    }
 	}
