@@ -250,14 +250,13 @@ public class Woo {
 
 
     public static boolean royalFlush(ArrayList<Card> hand) {
+	boolean ret = false;
 	for (int x = 0; x < hand.size()-5; x++) {
 	    if (straightFlush(hand) && retGet(hand, x).val == 10) {
 		return true;
 	    }
-	    else {
-		return false;
-	    }
 	}
+	return ret;
     }
 
     public static boolean twoPair(ArrayList<Card> hand) {
@@ -292,7 +291,7 @@ public class Woo {
 
     public static boolean fullHouse(ArrayList<Card> hand) {
         
-        int thisVal; 
+        int thisVal = -1; 
 	for (int x = 0; x < hand.size()-2; x++) {
 	    if (!(retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val)) {
                 thisVal = retGet(hand, x).val;
@@ -311,6 +310,17 @@ public class Woo {
     }
 
 
+    public static boolean flush(ArrayList<Card> hand) {
+	int matchCount = 0;
+	for (int x = 0; x < hand.size(); x++) {
+	    for (int b = x + 1; b < hand.size(); b++) {
+		if (retGet(hand, x).suit.equals( retGet(hand, b).suit)) {
+		    matchCount++;
+		}
+	    }
+        }
+	    return matchCount >= 5;
+    }
     
 
     public static String findHandType(ArrayList<Card> all) {
@@ -327,7 +337,7 @@ public class Woo {
 	    }
 	}
 	//distinguish type of hand
-	
+	return "";
     }
 
     public static void main(String[] args) {
