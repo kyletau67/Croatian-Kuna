@@ -172,30 +172,60 @@ public class Woo {
 	pot += bet;  
     }
     public static void comCall() {
-	pot += bet; //add another amt of bet to the pot 
+	pot += bet; //add another amt of bet to the pot
+	System.out.println("Computer calls");
     }
     public static void comRaise() {
 	pot += 100.0;
+	System.out.println("Computer raises $100");
+    }
+    public static void comFold() {
+	System.out.println("Computer folds.");
+	win();
     }
     public static void fold() {
-	//lose();
+	lose();
     }
-    // public static void comTurn() {
-    //	if 
-    //}
+    public static void win() {
+	p1.balance += pot;
+	System.out.println("You won $$$.");
+	pot = 0;
+	bet = 0;
+    }
+    public static void lose() {
+	p1.balance -= bet;
+	System.out.println("You lost $$$.");
+	pot = 0;
+	bet = 0;
+    }
+    public static void comTurn() {
+	comHandType = findHandType(comHand);
+	if (comHandType > 5) {
+	    comRaise(); }
+	else if (comHandType > 3) {
+	    comCall(); }
+	else {
+	    if (Math.random() > 0.6) {
+		comCall(); }
+	    else {
+		comFold(); }
+	}
+    }
     public static void playTurn() {
 	deal();
 	displayTable();
+	System.out.println("Your Hand:");
 	displayHand();
 	System.out.println("(1) Call\n(2) Raise\n(3) Fold");
-	if (sc1.next() == "1") {
+	String response = sc1.next();
+	if (response == "1") {
 	    call(); }
-	else if (sc1.next() == "2") {
+	else if (response == "2") {
 	    System.out.println("How much would you like to raise?");
 	    raise(); }
-	else if (sc1.next() == "3") {
+	else if (response == "3") {
 	    fold(); }
-	//comTurn();
+	comTurn();
     }
 
 
