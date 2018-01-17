@@ -201,6 +201,7 @@ public class Woo {
 	table.clear();
 	p1.hand.clear();
 	comHand.clear();
+	System.out.println("Your $$: " + p1.balance);
     }
     public static void lose() {
 	p1.balance -= bet;
@@ -210,6 +211,7 @@ public class Woo {
 	table.clear();
 	p1.hand.clear();
 	comHand.clear();
+	System.out.println("Your $$: " + p1.balance);
     }
     public static void comTurn() {
 	comHandType = findHandType(comHand);
