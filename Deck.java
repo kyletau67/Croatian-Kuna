@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 /* Deck.java contains an ArrayList that holds all the 52 cards. It also has a deck resetting method that will clear the arraylist and add in a fresh set of 52 cards*/
 public class Deck {
-    public static ArrayList<Card> deck = new ArrayList<Card>();
-    public static Card c1 = new Card(1);
+    public static ArrayList<Card> deck = new ArrayList<Card>();  //arraylist to hold the cards in a deck
+    public static Card c1 = new Card(1); //instantiate each card
     public static Card c2 = new Card(2); 
     public static Card c3 = new Card(3);
     public static Card c4 = new Card(4);
@@ -59,7 +59,7 @@ public class Deck {
     public static Card c52 = new Card(52);
     
     public static void resetDeck() {
-       	deck.clear();
+       	deck.clear();  //clear and add each card into the deck
         deck.add(c1);
 	deck.add(c2);
         deck.add(c3);
@@ -115,11 +115,11 @@ public class Deck {
 	//System.out.println(deck.size()+"");
     }
 
-    public static ArrayList<Card> getDeck() {
+    public static ArrayList<Card> getDeck() { //accessor
 	return deck;
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) { //test methods
 	resetDeck();
 	/*for (Object o: deck) {
 	    System.out.println(o);
