@@ -17,7 +17,7 @@ public class Woo {
     } //passes out cards from deck.java to table and hand of player
     public static void displayTable() {
 	for (Card t: table) {
-	    if (t.suit == "D") {
+	    if (t.suit.equals("D")) {
 		if (t.val == 13 ) {
 		    System.out.print("\u2666" + "K ");
 		}
@@ -34,7 +34,7 @@ public class Woo {
 		    System.out.print("\u2666" + t.val + " ");
 	        }
 	    }
-	    else if (t.suit == "C") {
+	    else if (t.suit.equals("C")) {
 		if (t.val == 13) {
 		    System.out.print("\u2663" + "K ");
 		}
@@ -51,7 +51,7 @@ public class Woo {
 		    System.out.print("\u2663" + t.val + " ");
 		}
 	    }
-	    else if (t.suit == "H") {
+	    else if (t.suit.equals("H")) {
 		if (t.val == 13) {
 		    System.out.print("\u2764" + "K ");
 		}
@@ -90,7 +90,7 @@ public class Woo {
     } //prints the table
     public static void displayHand() {
 	for (Card h: p1.hand) {
-	    if (h.suit == "D") {
+	    if (h.suit.equals("D")) {
 		if (h.val == 13) {
 		    System.out.print("\u2666" + "K ");
 		}
@@ -107,7 +107,7 @@ public class Woo {
 		    System.out.print("\u2666" + h.val + " ");
 		}
 	    }
-	    else if (h.suit == "C") {
+	    else if (h.suit.equals("C")) {
 		if (h.val == 13) {
 		    System.out.print("\u2663" + "K ");
 		}
@@ -124,7 +124,7 @@ public class Woo {
 		    System.out.print("\u2663" + h.val + " ");
 		}
 	    }
-	    else if (h.suit == "H") {
+	    else if (h.suit.equals("H")) {
 		if (h.val == 13) {
 		    System.out.print("\u2764" + "K ");
 		}
