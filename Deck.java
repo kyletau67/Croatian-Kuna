@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /* Deck.java contains an ArrayList that holds all the 52 cards. It also has a deck resetting method that will clear the arraylist and add in a fresh set of 52 cards*/
 public class Deck {
-    public static ArrayList<Comparable> deck = new ArrayList<Comparable>();
+    public static ArrayList<Card> deck = new ArrayList<Card>();
     public static Card c1 = new Card(1);
     public static Card c2 = new Card(2); 
     public static Card c3 = new Card(3);
@@ -60,62 +60,62 @@ public class Deck {
 
     public static void resetDeck() {
        	deck.clear();
-        deck.add((Comparable)c1);
-	deck.add((Comparable)c2);
-        deck.add((Comparable)c3);
-        deck.add((Comparable)c4);
-        deck.add((Comparable)c5);
-        deck.add((Comparable)c6);
-        deck.add((Comparable)c7);
-        deck.add((Comparable)c8);
-        deck.add((Comparable)c9);
-        deck.add((Comparable)c10);
-        deck.add((Comparable)c11);
-        deck.add((Comparable)c12);
-        deck.add((Comparable)c13);
-        deck.add((Comparable)c14);
-        deck.add((Comparable)c15);
-        deck.add((Comparable)c16);
-        deck.add((Comparable)c17);
-        deck.add((Comparable)c18);
-        deck.add((Comparable)c19);
-        deck.add((Comparable)c20);
-        deck.add((Comparable)c21);
-        deck.add((Comparable)c22);
-        deck.add((Comparable)c23);
-        deck.add((Comparable)c24);
-        deck.add((Comparable)c25);
-        deck.add((Comparable)c26);
-        deck.add((Comparable)c27);
-        deck.add((Comparable)c28);
-        deck.add((Comparable)c29);
-        deck.add((Comparable)c30);
-        deck.add((Comparable)c31);
-        deck.add((Comparable)c32);
-        deck.add((Comparable)c33);
-        deck.add((Comparable)c34);
-        deck.add((Comparable)c35);
-        deck.add((Comparable)c36);
-        deck.add((Comparable)c37);
-        deck.add((Comparable)c38);
-        deck.add((Comparable)c39);
-        deck.add((Comparable)c40);
-        deck.add((Comparable)c41);
-        deck.add((Comparable)c42);
-        deck.add((Comparable)c43);
-        deck.add((Comparable)c44);
-        deck.add((Comparable)c45);
-        deck.add((Comparable)c46);
-        deck.add((Comparable)c47);
-        deck.add((Comparable)c48);
-        deck.add((Comparable)c49);
-        deck.add((Comparable)c50);
-	deck.add((Comparable)c51);
-	deck.add((Comparable)c52);
+        deck.add(c1);
+	deck.add(c2);
+        deck.add(c3);
+        deck.add(c4);
+        deck.add(c5);
+        deck.add(c6);
+        deck.add(c7);
+        deck.add(c8);
+        deck.add(c9);
+        deck.add(c10);
+        deck.add(c11);
+        deck.add(c12);
+        deck.add(c13);
+        deck.add(c14);
+        deck.add(c15);
+        deck.add(c16);
+        deck.add(c17);
+        deck.add(c18);
+        deck.add(c19);
+        deck.add(c20);
+        deck.add(c21);
+        deck.add(c22);
+        deck.add(c23);
+        deck.add(c24);
+        deck.add(c25);
+        deck.add(c26);
+        deck.add(c27);
+        deck.add(c28);
+        deck.add(c29);
+        deck.add(c30);
+        deck.add(c31);
+        deck.add(c32);
+        deck.add(c33);
+        deck.add(c34);
+        deck.add(c35);
+        deck.add(c36);
+        deck.add(c37);
+        deck.add(c38);
+        deck.add(c39);
+        deck.add(c40);
+        deck.add(c41);
+        deck.add(c42);
+        deck.add(c43);
+        deck.add(c44);
+        deck.add(c45);
+        deck.add(c46);
+        deck.add(c47);
+        deck.add(c48);
+        deck.add(c49);
+        deck.add(c50);
+	deck.add(c51);
+	deck.add(c52);
 	System.out.println(deck);
     }
 
-    public static ArrayList<Comparable> getDeck() {
+    public static ArrayList<Card> getDeck() {
 	return deck;
     }
     

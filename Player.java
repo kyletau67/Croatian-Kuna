@@ -5,9 +5,9 @@ public class Player {
     
     public String name;
     public double balance;
-    public static ArrayList<Comparable> hand;
-    public static ArrayList<Comparable> all;
-    public ArrayList<Comparable> table;
+    public static ArrayList<Card> hand;
+    public static ArrayList<Card> all;
+    public ArrayList<Card> table;
     Scanner sc = new Scanner(System.in);
     
     public Player() {
