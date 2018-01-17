@@ -263,6 +263,37 @@ public class Woo {
 	}
     }
 
+    public boolean twoPair?() {
+	int  count = 0;
+	for (int x = 0; x < all.size() - 1; x++) {
+	    if (( all.get(x).val) == (all.get(x+1).val)) {
+		count += 1; 
+	    }
+	}
+	if (count == 2) { 
+	    return true;
+	}
+	else { 
+	    return false;
+	}
+    }
+
+    public boolean pair?() { 
+	int  count = 0;
+	for (int x = 0; x < all.size() - 1; x++) {
+	    if (( all.get(x).val) == (all.get(x+1).val)) {
+		count += 1; 
+	    }
+	}
+	if (count == 1) { 
+	    return true;
+	}
+	else { 
+	    return false;
+	}
+    }
+
+
     public static void findHandType(ArrayList<Card> all) {
 	all = comHand;
 	//sort first
