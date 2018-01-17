@@ -112,7 +112,7 @@ public class Deck {
         deck.add(c50);
 	deck.add(c51);
 	deck.add(c52);
-	System.out.println(deck);
+	//System.out.println(deck);
     }
 
     public static ArrayList<Card> getDeck() {
