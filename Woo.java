@@ -184,13 +184,19 @@ public class Woo {
     }
     public static void comRaise() {
 	pot += 100.0;
-	System.out.println("Computer raises $100");
+	System.out.println("Computer raises $100\nMatch?\n (1) Yes (2) No");
+	if (sc1.next() == "1") {
+	    call(); }
+	else {
+	    fold();}
+	
     }
     public static void comFold() {
 	System.out.println("Computer folds.");
 	win();
     }
     public static void fold() {
+	System.out.println("You lost" + bet);
 	lose();
     }
     public static void win() {
