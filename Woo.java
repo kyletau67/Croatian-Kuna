@@ -237,15 +237,21 @@ public class Woo {
 	displayTable();
 	displayHand();
 	System.out.println("(1) Bet\n(2) Raise\n(3) Fold");
-	String response = sc1.next();
-	if (response == "1") {
-	    bet(); }
-	else if (response == "2") {
+        int num = Integer.parseInt(sc1.next());
+	switch (num) {
+	case 1:
+	    bet();
+	    comTurn();
+	    break;
+	case 2: 
 	    System.out.println("How much would you like to raise?");
-	    raise(); }
-	else if (response == "3") {
-	    fold(); }
-	comTurn();
+	    raise();
+	    comTurn();
+	    break;
+	case 3:
+	    fold();
+	    break;
+	}
     }
 
 
@@ -369,7 +375,7 @@ public class Woo {
 		}
 	    }
         }
-	    return matchCount >= 5;
+	return matchCount >= 5;
     }
     
 
