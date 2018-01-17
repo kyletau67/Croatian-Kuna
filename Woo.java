@@ -17,12 +17,7 @@ public class Woo {
 	comHand.add(Deck.deck.get(deal));
 	p1.addAll(deal);
     } //passes out cards from deck.java to table and hand of player
-<<<<<<< HEAD
-    
-    public static void displayTable() {
-=======
     public static void displayTable() {  //prints out the display of the table
->>>>>>> 4e3f912f8c49a4c77b74a1cd596d0c64a97ee9d8
        	System.out.println("\n");
 	System.out.print("Table:   ");
 	for (Card t: table) {
@@ -96,14 +91,10 @@ public class Woo {
 	    }
 	}
 	System.out.println();
-<<<<<<< HEAD
     } //prints the table
     
-    public static void displayHand() {
-=======
-    }
+
     public static void displayHand() {  //prints out the hand  
->>>>>>> 4e3f912f8c49a4c77b74a1cd596d0c64a97ee9d8
        	System.out.println("\n");
 	System.out.print("Hand:   ");
 	for (Card h: p1.hand) {
@@ -219,13 +210,8 @@ public class Woo {
 	bet = 0;
 	System.out.println("Your $$: " + p1.balance);
     }
-<<<<<<< HEAD
-    public static void lose() {
-	p1.balance -= pot;
-=======
     public static void lose() {  //subtract money from your balance 
 	p1.balance -= bet;
->>>>>>> 4e3f912f8c49a4c77b74a1cd596d0c64a97ee9d8
 	System.out.println("You lost $$$.");
 	pot = 0;
 	bet = 0;
@@ -265,13 +251,8 @@ public class Woo {
 	return hand.get(hand.size()-i-1);
     }
     
-<<<<<<< HEAD
-    public static boolean straight(ArrayList<Card> hand) {
-	for (int x = 0; x < hand.size() - 1; x++) {
-=======
     public static boolean straight(ArrayList<Card> hand) {  //checks for straight hand
-	for (int x = 0; x < hand.size(); x++) {
->>>>>>> 4e3f912f8c49a4c77b74a1cd596d0c64a97ee9d8
+	for (int x = 0; x < hand.size()-1; x++) {
 	    if (!(((retGet(hand, x).val) - (retGet(hand, x+1).val)) == 1)) {
 		return false; }
 	}  
@@ -377,21 +358,6 @@ public class Woo {
     }
 
 
-<<<<<<< HEAD
-    public static boolean flush(ArrayList<Card> hand) {
-	int heartMatchCount = 0;
-	int spadeMatchCount = 0;
-	int diamondMatchCount = 0;
-	int clubMatchCount = 0;
-	for (int x = 0; x < hand.size(); x++) {
-
-	    if (retGet(hand, x).suit.equals("H")) heartMatchCount++;
-	    if (retGet(hand, x).suit.equals("S")) spadeMatchCount++;
-	    if (retGet(hand, x).suit.equals("D")) diamondMatchCount++;
-	    if (retGet(hand, x).suit.equals("C")) clubMatchCount++;
-        }	
-	return false;
-=======
     public static boolean flush(ArrayList<Card> hand) {  //checks for a flush hand
 	int matchCount = 0;
 	for (int x = 0; x < hand.size(); x++) {
@@ -402,7 +368,6 @@ public class Woo {
 	    }
         }
 	    return matchCount >= 5;
->>>>>>> 4e3f912f8c49a4c77b74a1cd596d0c64a97ee9d8
     }
     
 
@@ -442,7 +407,6 @@ public class Woo {
 	    return 1; }
     }
 
-<<<<<<< HEAD
     public static String getHandType(int handType) {
 	if (handType == 10) return("Royal Flush");
 	if (handType == 9) return("Straight Flush");
@@ -457,10 +421,7 @@ public class Woo {
 	return("");
     }
     
-    public static void compare() {
-=======
     public static void compare() {  //compare your final hand to comp's final hand to find winner
->>>>>>> 4e3f912f8c49a4c77b74a1cd596d0c64a97ee9d8
 	System.out.println("Final Comparisons!");
 	System.out.println("Computer had: " + getHandType(comHandType));
 

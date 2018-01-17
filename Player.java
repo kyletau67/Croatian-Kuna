@@ -12,14 +12,9 @@ public class Player {
     public static Deck dk = new Deck();  //create a new deck to play
     
     public Player() {
-<<<<<<< HEAD
-	dk.resetDeck();
-	balance = 10000;
-=======
 	dk.resetDeck();  //add cards into the deck to play
 	System.out.println("yo");
 	balance = 10000;  //init the balance you have
->>>>>>> 4e3f912f8c49a4c77b74a1cd596d0c64a97ee9d8
 	System.out.println("What is your name?");
 	name = sc.next();  //take name input as name
 	int hand1 = (int) (Math.random() * (dk.deck.size()));
