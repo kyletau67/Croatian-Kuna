@@ -10,7 +10,7 @@ public class Card {
 	Cardkeys k = new Cardkeys();
 	k.makeDeck();
 	String str = (String)k.get(key);
-	System.out.println(str);
+	//System.out.println(str);
 	suit = str.substring(str.length()-1);
 	if (key % 13 == 9) {
 	    val = 10;
