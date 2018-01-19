@@ -23,8 +23,7 @@ OBSTACLES OVERCOME
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <
-There are no discernable bugs so far.
->
+Due to time constraints, we were unable to add error handling to our code, causing the program to end when putting in strings for bets and raises and causing interesting effects with numbers larger than your balance and numbers less than zero. Additionally, our hand finding mechanism is very buggy and may sometimes find a wrong hand in the player if your entire combo is from the table. It might also do this in weird circumstances we were unable to find out about.>
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

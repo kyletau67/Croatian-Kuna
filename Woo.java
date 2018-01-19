@@ -215,7 +215,6 @@ public class Woo {
     }
     public static void lose() {  //subtract money from your balance 
 	p1.balance -= bet;
-	System.out.println("You lost $$$.");
 	pot = 0;
 	bet = 0;
 	System.out.println("Your $$: " + p1.balance);
@@ -280,11 +279,11 @@ public class Woo {
 
     public static boolean threeOfAKind(ArrayList<Card> hand) {  //checks for 3 of a kind hand
 	for (int x = 0; x < hand.size()-2; x++) {
-	    if (!(retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val)) {
-		return false;
+	    if (retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val) {
+		return true;
 	    }
 	}
-	return true;
+	return false;
     }
 
 
@@ -294,7 +293,7 @@ public class Woo {
 	}
 	else {
 	    return false;
-      	}
+	}
     }
 
     public static boolean straightFlush(ArrayList<Card> hand) {  //checks for straight flush hand
@@ -349,16 +348,16 @@ public class Woo {
 
     public static boolean fullHouse(ArrayList<Card> hand) {  //checks for a full house hand
         
-        int thisVal = -1; 
+	int thisVal = -1; 
 	for (int x = 0; x < hand.size()-2; x++) {
 	    if (!(retGet(hand, x).val == retGet(hand, x+1).val && retGet(hand, x+1).val == retGet(hand, x+2).val)) {
-                thisVal = retGet(hand, x).val;
+		thisVal = retGet(hand, x).val;
 		return false;
 	    }
 	}
 
 	ArrayList<Card> tmpHand = new ArrayList<Card>();
-        for (int x =0; x < hand.size(); x++) {
+	for (int x =0; x < hand.size(); x++) {
 	    if ( retGet(hand, x).val != thisVal) {
 		tmpHand.add(retGet(hand, x));
 	    }
@@ -376,8 +375,8 @@ public class Woo {
 		    matchCount++;
 		}
 	    }
-        }
-	    return matchCount >= 5;
+	}
+	return matchCount >= 5;
     }
     
 
@@ -395,7 +394,7 @@ public class Woo {
 	}
 	
 	
-        if (royalFlush(all)) {
+	if (royalFlush(all)) {
 	    return 10; }
 	else if (straightFlush(all)) {
 	    return 9; }
@@ -434,16 +433,14 @@ public class Woo {
     public static void compare() {  //compare your final hand to comp's final hand to find winner
 	System.out.println("Final Comparisons!");
 	System.out.println("Computer had: " + getHandType(comHandType));
-
-	p1.all.add(table.get(0));
-	p1.all.add(table.get(1));
 	
 	pHandType = findHandType(p1.all);
 	System.out.println("You had: " + getHandType(pHandType));
 	if (pHandType > comHandType) {
 	    win(); }
 	else if (pHandType < comHandType) {
-	    lose(); }
+	    lose();
+	}
 	else {
 	    lose(); }//subject to change, if we actually want to compare
     }
